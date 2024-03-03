@@ -12,16 +12,26 @@ public class movement : MonoBehaviour
     [SerializeField] private bool grounded;
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
+    [SerializeField] private float val;
 
     //update function
     private void Update()
     {
+        if(grounded == true)
+        {
+            val = 1;
+        }
+        if(grounded == false)
+        {
+            val = 0;
+        }
+
         //player input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         //jumping
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && grounded == true)
         {
             velocityY = jumpVelocity;
         }
