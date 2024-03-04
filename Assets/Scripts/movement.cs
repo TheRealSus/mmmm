@@ -7,31 +7,22 @@ public class movement : MonoBehaviour
     //variable stuff
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed;
-    [SerializeField] private float gravity = -6.8f;
+    [SerializeField] private float gravity = -6f;
 
     [SerializeField] private bool grounded;
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
-    [SerializeField] private float val;
 
     //update function
     private void Update()
     {
-        if(grounded == true)
-        {
-            val = 1;
-        }
-        if(grounded == false)
-        {
-            val = 0;
-        }
 
         //player input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         //jumping
-        if(Input.GetKeyDown(KeyCode.Space) && grounded == true)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded==true)
         {
             velocityY = jumpVelocity;
         }
@@ -55,6 +46,7 @@ public class movement : MonoBehaviour
             float yRot = Mathf.Atan2(x, z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, yRot, 0);
         }
+
     }
 
     private void OnTriggerExit(Collider collider)
@@ -71,6 +63,7 @@ public class movement : MonoBehaviour
         {
             velocityY = 0;
             grounded = true;
+
         }
     }
 
