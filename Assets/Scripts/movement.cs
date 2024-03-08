@@ -12,6 +12,8 @@ public class movement : MonoBehaviour
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
 
+    [SerializeField] private ParticleSystem dirtParticle;
+
     private GameObject playerCam;
 
     void Start()
