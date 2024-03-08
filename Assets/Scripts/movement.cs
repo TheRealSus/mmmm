@@ -12,15 +12,22 @@ public class movement : MonoBehaviour
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
 
+    private GameObject playerCam;
+
+    void Start()
+    {
+        playerCam = FindObjectOfType<cameraFollow>().gameObject;
+    }
+
     //update function
     private void Update()
     {
 
+        Debug.Log(transform.position.y);
+
         //player input
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
-        
 
         //calculate vertical speed from gravity
         if(!controller.isGrounded)
@@ -47,7 +54,9 @@ public class movement : MonoBehaviour
         if (x !=0 || z !=0)
         {
             float yRot = Mathf.Atan2(x, z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, yRot, 0);
+            float targetAngle = yRot + playerCam.transform.eulerAngles.y;
+            float currentAngle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, 10 * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, currentAngle, 0);
         }
 
     }
