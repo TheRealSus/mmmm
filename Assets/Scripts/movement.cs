@@ -12,7 +12,7 @@ public class movement : MonoBehaviour
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
 
-    [SerializeField] private ParticleSystem dirtParticle;
+    [SerializeField] private ParticleSystem Peejuice;
 
     private GameObject playerCam;
 
@@ -41,6 +41,16 @@ public class movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
             velocityY = jumpVelocity;
+        }
+
+        //peeing
+        if (Input.GetKey(KeyCode.V))
+        {
+            Peejuice.gameObject.SetActive(true);
+
+        }else
+        {
+            Peejuice.gameObject.SetActive(false);
         }
 
         Vector3 vertical = new Vector3(0, velocityY, 0);
