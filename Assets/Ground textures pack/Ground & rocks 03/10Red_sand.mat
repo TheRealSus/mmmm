@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 10Red_sand
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 6b75266228de9b54cb2410e1e91ed2a4, type: 2}
+  m_Parent: {fileID: 2100000, guid: 5558b5711d37782468eeee5c2880e7d8, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _NORMALMAP

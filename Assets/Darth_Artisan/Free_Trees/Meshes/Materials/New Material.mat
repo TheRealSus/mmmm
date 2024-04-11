@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ball_flavor
+  m_Name: New Material
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 98189d553b7404d8290e447fb600ac6f, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_Parent: {fileID: 2100000, guid: b3538c7b59fea0144bac0e410e5fe923, type: 2}
+  m_ModifiedSerializedProperties: 2
   m_ValidKeywords:
   - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -23,10 +23,16 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glossiness: 1
-    - _Metallic: 0.321
-    m_Colors: []
+    - _DetailNormalMapScale: 1
+    - _Glossiness: 0.5
+    m_Colors:
+    - _Color: {r: 0.016242431, g: 0.35022113, b: 0.6886792, a: 1}
+    - _EmissionColor: {r: 0.11320752, g: 0, b: 0.11320752, a: 1}
   m_BuildTextureStacks: []
