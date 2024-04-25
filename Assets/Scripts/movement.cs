@@ -80,5 +80,4 @@ public class movement : MonoBehaviour
             velocityY += gravity * Time.deltaTime;
         }
     }
-
 }
