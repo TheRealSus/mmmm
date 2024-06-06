@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class movement : MonoBehaviour
 {
     //variable stuff
+
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed;
     [SerializeField] private float gravity = -6f;
@@ -12,7 +14,7 @@ public class movement : MonoBehaviour
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
 
-    [SerializeField] private ParticleSystem Peejuice;
+    [SerializeField] private ParticleSystem dirtParticles;
 
     private GameObject playerCam;
 
@@ -44,13 +46,13 @@ public class movement : MonoBehaviour
         }
 
         //peeing
-        if (Input.GetKey(KeyCode.V))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            Peejuice.gameObject.SetActive(true);
+            dirtParticles.gameObject.SetActive(true);
 
         }else
         {
-            Peejuice.gameObject.SetActive(false);
+            dirtParticles.gameObject.SetActive(false);
         }
 
         Vector3 vertical = new Vector3(0, velocityY, 0);
