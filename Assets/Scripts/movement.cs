@@ -10,17 +10,17 @@ public class movement : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed;
     [SerializeField] private float gravity = -6f;
-
     [SerializeField] private float velocityY;
     [SerializeField] private float jumpVelocity;
-
     [SerializeField] private ParticleSystem dirtParticles;
-
     private GameObject playerCam;
+
+    Animator myAnimator;
 
     void Start()
     {
         playerCam = FindObjectOfType<cameraFollow>().gameObject;
+        myAnimator = GetComponent<Animator>();
     }
 
     //update function
@@ -49,10 +49,14 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             dirtParticles.gameObject.SetActive(true);
-
+            myAnimator.SetBool("isIdle", false);
+            myAnimator.SetBool("isWalk", true);
         }else
         {
             dirtParticles.gameObject.SetActive(false);
+            myAnimator.SetBool("isWalk", false);
+            myAnimator.SetBool("isIdle", true);
+
         }
 
         Vector3 vertical = new Vector3(0, velocityY, 0);
