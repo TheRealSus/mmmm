@@ -52,6 +52,7 @@ public class movement : MonoBehaviour
             myAnimator.SetFloat("Speed", 3);
         }else
         {
+            
             dirtParticles.gameObject.SetActive(false);
             myAnimator.SetFloat("Speed", 0);
 
