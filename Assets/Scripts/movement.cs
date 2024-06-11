@@ -45,17 +45,15 @@ public class movement : MonoBehaviour
             velocityY = jumpVelocity;
         }
 
-        //peeing
+        //see is movement
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             dirtParticles.gameObject.SetActive(true);
-            myAnimator.SetBool("isIdle", false);
-            myAnimator.SetBool("isWalk", true);
+            myAnimator.SetFloat("Speed", 3);
         }else
         {
             dirtParticles.gameObject.SetActive(false);
-            myAnimator.SetBool("isWalk", false);
-            myAnimator.SetBool("isIdle", true);
+            myAnimator.SetFloat("Speed", 0);
 
         }
 
