@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private GameObject enemyIs;
     [SerializeField] float enemySpeed;
     [SerializeField] float distance; //distance of enemy to player
     [SerializeField] float noticeDistance; //how far away you are before it sees you
@@ -14,7 +15,7 @@ public class enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("PLayer").transform;
-        startPos = transform.position;
+        startPos = enemyIs.transform.position;
         
     }
 
@@ -39,7 +40,8 @@ public class enemy : MonoBehaviour
 
         void goHome()
         {
-
+            transform.LookAt(startPos);
+            transform.Translate(0,0, enemySpeed * Time.deltaTime);
         }
     }
 }
