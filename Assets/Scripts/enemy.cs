@@ -10,6 +10,7 @@ public class enemy : MonoBehaviour
     [SerializeField] float distance; //distance of enemy to player
     [SerializeField] float noticeDistance; //how far away you are before it sees you
     Vector3 startPos;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +35,16 @@ public class enemy : MonoBehaviour
 
         void chase()
         {
-            transform.LookAt(player);
+            Vector3 playerPosition = new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z);
+            transform.LookAt(playerPosition);
+            //^
             transform.Translate(0,0, enemySpeed * Time.deltaTime);
         }
 
         void goHome()
         {
             transform.LookAt(startPos);
-            transform.Translate(0,0, enemySpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, startPos, 0.0007f);
         }
     }
 }

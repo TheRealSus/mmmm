@@ -37,12 +37,18 @@ public class movement : MonoBehaviour
         if(!controller.isGrounded)
         {
             velocityY += gravity * Time.deltaTime;
+            myAnimator.SetBool("Jump",true);
+        }
+        else
+        {
+            myAnimator.SetBool("Jump",false);
         }
 
         //jumping
         if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
             velocityY = jumpVelocity;
+            
         }
 
         //see is movement
