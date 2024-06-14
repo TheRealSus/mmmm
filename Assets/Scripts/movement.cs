@@ -13,11 +13,13 @@ public class movement : MonoBehaviour
     [SerializeField] private float jumpVelocity;
     [SerializeField] private ParticleSystem dirtParticles;
     private GameObject playerCam;
+    [SerializeField] private GameObject startScreen;
 
     Animator myAnimator;
 
     void Start()
     {
+       
         //The Camera
         playerCam = FindObjectOfType<cameraFollow>().gameObject;
         //The Animator
@@ -29,6 +31,11 @@ public class movement : MonoBehaviour
     private void Update()
     {
 
+         if(startScreen.activeInHierarchy)
+        {
+
+        }
+        else{
         Debug.Log(transform.position.y);
 
         //player input
@@ -83,7 +90,7 @@ public class movement : MonoBehaviour
             float currentAngle = Mathf.LerpAngle(transform.eulerAngles.y, targetAngle, 10 * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, currentAngle, 0);
         }
-
+        }
     }
 
     private void Gravity()

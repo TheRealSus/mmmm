@@ -1470,7 +1470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4356800953600124292, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4791611851574708811, guid: fb82dfb8d1c7044c69afd2486befecb3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -2247,6 +2247,7 @@ MonoBehaviour:
   velocityY: 0
   jumpVelocity: 40
   dirtParticles: {fileID: 1444848088}
+  startScreen: {fileID: 1012030043}
 --- !u!143 &1020518248
 CharacterController:
   m_ObjectHideFlags: 0
