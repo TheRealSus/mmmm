@@ -17,12 +17,13 @@ public class movement : MonoBehaviour
 
     Animator myAnimator;
 
+    //directly when the game starts, these two things happen
     void Start()
     {
        
-        //The Camera
+        //the Camera watches the player
         playerCam = FindObjectOfType<cameraFollow>().gameObject;
-        //The Animator
+        //the Animator is used
         myAnimator = GetComponent<Animator>();
 
     }
