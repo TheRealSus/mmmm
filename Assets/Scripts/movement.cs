@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class movement : MonoBehaviour
 {
     //variable stuff
-
     [SerializeField] private CharacterController controller;
-
     [SerializeField] private float speed;
     [SerializeField] private float gravity = -6f;
     [SerializeField] private float velocityY;
@@ -18,23 +14,20 @@ public class movement : MonoBehaviour
     [SerializeField] private ParticleSystem dirtParticles;
     private GameObject playerCam;
 
-    private TextMeshProUGUI startScreen;
-
     Animator myAnimator;
 
     void Start()
     {
+        //The Camera
         playerCam = FindObjectOfType<cameraFollow>().gameObject;
+        //The Animator
         myAnimator = GetComponent<Animator>();
+
     }
 
     //update function
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            startScreen.gameObject.SetActive(false);
-        }
 
         Debug.Log(transform.position.y);
 
